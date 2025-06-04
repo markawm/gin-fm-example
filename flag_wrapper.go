@@ -13,8 +13,6 @@ func getFlagValue(flagName string) (string, error) {
 		return flags.ShowMessage.GetValue(nil), nil
 	case "Message":
 		return flags.Message.GetValue(nil), nil
-	case "FontColor":
-		return flags.FontColor.GetValue(nil), nil
 	case "FontSize":
 		return fmt.Sprintf("%d", flags.FontSize.GetValue(nil)), nil
 	default:
