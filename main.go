@@ -41,6 +41,12 @@ func main() {
 	fmt.Printf("notflags message: %s, fontColor: %s, fontSize: %d, showMessage: %t\n",
 		notFlags.GetMessage(), notFlags.GetFontColor(), notFlags.GetFontSize(), notFlags.IsShowMessage())
 
+	fmt.Println("Starting... Here are the flag values I'll use")
+	fmt.Printf("ShowMessage: %t\n", flags.ShowMessage.GetValue(nil))
+	fmt.Printf("Message: %t\n", flags.Message.GetValue(nil))
+	fmt.Printf("FontColor: %s\n", flags.FontColor.GetValue(nil))
+	fmt.Printf("FontSize: %d\n", flags.FontSize.GetValue(nil))
+
 	router := gin.Default()
 	router.GET("/", homePage)
 	router.GET("/demo", demo)
