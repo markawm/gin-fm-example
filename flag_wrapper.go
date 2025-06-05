@@ -7,7 +7,7 @@ import (
 func getFlagValue(flagName string) (string, error) {
 	switch flagName {
 	case "ShowMessage":
-		return flags.ShowMessage.GetValue(nil), nil
+		return "true", nil 
 	case "Message":
 		return flags.Message.GetValue(nil), nil
 	case "FontColor":
