@@ -7,10 +7,10 @@ import (
 func getFlagValue(flagName string) (string, error) {
 	// This function would typically interact with a feature management service
 	// to retrieve the value of the specified flag.
-	// For demonstration purposes, we return a hardcoded value.
+	// For the "ShowMessage" flag, we assume the value is always true.
 	switch flagName {
 	case "ShowMessage":
-		return flags.ShowMessage.GetValue(nil), nil
+		return "true", nil
 	case "Message":
 		return flags.Message.GetValue(nil), nil
 	case "FontColor":

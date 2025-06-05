@@ -42,7 +42,7 @@ func main() {
 		notFlags.GetMessage(), notFlags.GetFontColor(), notFlags.GetFontSize(), notFlags.IsShowMessage())
 
 	fmt.Println("Starting... Here are the flag values I'll use")
-	fmt.Printf("ShowMessage: %t\n", flags.ShowMessage.GetValue(nil))
+	fmt.Printf("ShowMessage: true\n")
 	fmt.Printf("Message: %t\n", flags.Message.GetValue(nil))
 	fmt.Printf("FontColor: %s\n", flags.FontColor.GetValue(nil))
 	fmt.Printf("FontSize: %d\n", flags.FontSize.GetValue(nil))
@@ -60,12 +60,7 @@ func homePage(c *gin.Context) {
 }
 
 func demo(c *gin.Context) {
-	msg := ""
-	if flags.ShowMessage.IsEnabled(nil) {
-		msg = flags.Message.GetValue(nil)
-	} else {
-		msg = "Flag message hidden. Enable the flag in the Cloudbees platform to display it."
-	}
+	msg := flags.Message.GetValue(nil)
 	c.IndentedJSON(http.StatusOK, gin.H{"message": msg, "fontColor": flags.FontColor.GetValue(nil), "fontSize": flags.FontSize.GetValue(nil)})
 }
 
