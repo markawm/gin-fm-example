@@ -6,8 +6,6 @@ import (
 
 func getFlagValue(flagName string) (string, error) {
 	switch flagName {
-	case "ShowMessage":
-		return flags.ShowMessage.GetValue(nil), nil
 	case "Message":
 		return flags.Message.GetValue(nil), nil
 	case "FontColor":
@@ -17,5 +15,4 @@ func getFlagValue(flagName string) (string, error) {
 	default:
 		return "", fmt.Errorf("flag %s not found", flagName)
 	}
-
 }
